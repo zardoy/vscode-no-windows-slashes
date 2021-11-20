@@ -1,0 +1,11 @@
+out/
+dist
+src/generated.ts
+test/fixtures/mixed-dirs
+out-test
+node_modules
+.vscode-test/
+*.vsix
+*.log
+*LocalExperiment.ts
+.DS_Store

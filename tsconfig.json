@@ -1,0 +1,8 @@
+{
+    "extends": "@zardoy/tsconfig/node",
+    "compilerOptions": {
+        "target": "ES2020",
+        "noUncheckedIndexedAccess": false
+    },
+    "include": ["src"]
+}

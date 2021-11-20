@@ -1,0 +1,54 @@
+{
+    "name": "no-windows-slashes",
+    "displayName": "No Windows Slashes",
+    "publisher": "zardoy",
+    "description": "Normalize windows slashes \\ -> / whenever you focus window",
+    "icon": "resources/icon.png",
+    "version": "0.0.1",
+    "categories": [
+        "Other"
+    ],
+    "keywords": [
+        "windows",
+        "slashes",
+        "forward slashes",
+        "normalize",
+        "unix"
+    ],
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "contributes": {
+        "configuration": {
+            "title": "GitHub Manager",
+            "properties": {
+                "web.enable": {
+                    "type": "boolean",
+                    "description": "Wether to enable extension on web",
+                    "default": false
+                }
+            }
+        }
+    },
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": true
+        },
+        "virtualWorkspaces": true
+    },
+    "scripts": {
+        "start": "vscode-framework start"
+    },
+    "devDependencies": {
+        "@types/node": "16.11.7",
+        "@types/vscode": "^1.62.0",
+        "@zardoy/tsconfig": "^1.2.2",
+        "eslint": "^7.32.0",
+        "eslint-plugin-zardoy-config": "^0.1.3",
+        "typescript": "^4.4.4"
+    },
+    "dependencies": {
+        "vscode-framework": "^0.0.14"
+    },
+    "license": "MIT"
+}
