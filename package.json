@@ -2,7 +2,7 @@
     "name": "no-windows-slashes",
     "displayName": "No Windows Slashes",
     "publisher": "zardoy",
-    "description": "Normalize windows slashes \\ -> / whenever you focus window",
+    "description": "Normalize windows slashes \\ -> / (on window focus & command)",
     "icon": "resources/icon.png",
     "version": "0.0.1",
     "categories": [
@@ -19,13 +19,17 @@
         "onStartupFinished"
     ],
     "contributes": {
+        "commands": [
+            {
+                "command": "fixedCopyFilePath",
+                "title": "Fixed Copy File Path"
+            }
+        ],
         "configuration": {
-            "title": "GitHub Manager",
             "properties": {
-                "web.enable": {
+                "enable": {
                     "type": "boolean",
-                    "description": "Wether to enable extension on web",
-                    "default": false
+                    "default": true
                 }
             }
         }
@@ -37,7 +41,8 @@
         "virtualWorkspaces": true
     },
     "scripts": {
-        "start": "vscode-framework start"
+        "start": "vscode-framework start",
+        "build": "vscode-framework build"
     },
     "devDependencies": {
         "@types/node": "16.11.7",
@@ -50,5 +55,15 @@
     "dependencies": {
         "vscode-framework": "^0.0.14"
     },
-    "license": "MIT"
+    "license": "MIT",
+    "prettier": {
+        "semi": false,
+        "singleQuote": true,
+        "proseWrap": "never",
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "arrowParens": "avoid",
+        "printWidth": 160,
+        "endOfLine": "auto"
+    }
 }
