@@ -3,8 +3,10 @@ import { getExtensionSetting, registerExtensionCommand } from 'vscode-framework'
 
 export const activate = () => {
     const normalizeClipboard = async () => {
+        const windowPathRegex = /^"?[A-Z]:\\/
         if (!getExtensionSetting('enable')) return
         const clipboard = await vscode.env.clipboard.readText()
+        if (!getExtensionSetting('alwaysPatch') && !windowPathRegex.test(clipboard)) return
         const patched = clipboard.replaceAll('\\', '/')
         await vscode.env.clipboard.writeText(patched)
     }

@@ -30,6 +30,11 @@
                 "enable": {
                     "type": "boolean",
                     "default": true
+                },
+                "alwaysPatch": {
+                    "type": "boolean",
+                    "description": "By default patch clipboard only when it seems to be windows path",
+                    "default": false
                 }
             }
         }
